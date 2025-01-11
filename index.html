@@ -74,6 +74,7 @@
       margin: 30px 0 10px;
     }
 
+    /* Form for checklist */
     form {
       background-color: #ffffff;
       padding: 20px;
@@ -184,8 +185,8 @@
 </section>
 
 <div class="container">
-  <!-- Updated form action to redirect to subscribe.html -->
-  <form action="subscribe.html" method="POST" enctype="multipart/form-data">
+  <!-- Using method="GET" so it just navigates to subscribe.html on submission -->
+  <form action="subscribe.html" method="GET">
     <!-- OFFICES -->
     <h3>Offices</h3>
     <table>
