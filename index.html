@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Cleaneroo Commercial - Office Cleaning Schedule</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    /* Approximate brand colors from screenshot: greens with white, etc. */
     :root {
       --header-bg: #2f4d3f;       /* Dark greenish for header */
-      --background: #f0f4f1;      /* Light, subtle green/gray background */
+      --background: #f0f4f1;      /* Light subtle green/gray background */
       --accent: #4b8060;         /* Medium green accent */
-      --text-color: #333333;     /* General text color */
+      --text-color: #333333;
       --heading-font: "Georgia", serif;
       --body-font: "Segoe UI", Tahoma, sans-serif;
     }
@@ -152,27 +151,6 @@
       background-color: #3a654d;
     }
 
-    /* Recommendations section */
-    .recommendations {
-      margin-top: 40px;
-      background-color: #f7f9f7;
-      padding: 20px;
-      border-radius: 5px;
-    }
-    .recommendations h4 {
-      color: var(--accent);
-      font-family: var(--heading-font);
-      margin-bottom: 10px;
-      font-size: 18px;
-    }
-    .recommendations ul {
-      margin-left: 20px;
-      margin-top: 10px;
-    }
-    .recommendations ul li {
-      margin-bottom: 6px;
-    }
-
     footer {
       text-align: center;
       padding: 20px;
@@ -181,7 +159,6 @@
       color: #ffffff;
     }
 
-    /* Responsive */
     @media (max-width: 600px) {
       th, td {
         font-size: 14px;
@@ -207,7 +184,8 @@
 </section>
 
 <div class="container">
-  <form action="#" method="POST" enctype="multipart/form-data">
+  <!-- Updated form action to redirect to subscribe.html -->
+  <form action="subscribe.html" method="POST" enctype="multipart/form-data">
     <!-- OFFICES -->
     <h3>Offices</h3>
     <table>
@@ -472,22 +450,6 @@
 
     <button type="submit" class="submit-btn">Submit Checklist</button>
   </form>
-
-  <!-- Recommendations Section -->
-  <div class="recommendations">
-    <h4>Top 3 Recommendations for an Effective Office Clean</h4>
-    <ul>
-      <li>Schedule regular cleaning times to avoid disruptions.</li>
-      <li>Use eco-friendly, high-quality cleaning products for best results.</li>
-      <li>Encourage employees to keep personal workspaces tidy in between cleans.</li>
-    </ul>
-    <h4>3 Things to Avoid</h4>
-    <ul>
-      <li>Skipping high-touch points like door handles or phones.</li>
-      <li>Using harsh chemicals without proper ventilation or PPE.</li>
-      <li>Overlooking hidden areas (behind cabinets, under desks) that can harbor dirt.</li>
-    </ul>
-  </div>
 </div>
 
 <footer>
