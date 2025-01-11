@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cleaneroo Commercial - Office Cleaning Schedule</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    /* Approximate brand colors from screenshot: greens with white, etc. */
+    :root {
+      --header-bg: #2f4d3f;       /* Dark greenish for header */
+      --background: #f0f4f1;      /* Light, subtle green/gray background */
+      --accent: #4b8060;         /* Medium green accent */
+      --text-color: #333333;     /* General text color */
+      --heading-font: "Georgia", serif;
+      --body-font: "Segoe UI", Tahoma, sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--background);
+      color: var(--text-color);
+      font-family: var(--body-font);
+      line-height: 1.5;
+    }
+
+    header {
+      background-color: var(--header-bg);
+      color: #ffffff;
+      text-align: center;
+      padding: 20px;
+    }
+    header h1 {
+      font-family: var(--heading-font);
+      font-size: 28px;
+      margin-bottom: 5px;
+    }
+
+    .hero {
+      background-color: var(--background);
+      text-align: center;
+      padding: 30px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .hero h2 {
+      font-size: 24px;
+      font-family: var(--heading-font);
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 16px;
+      color: #555;
+      max-width: 650px;
+      margin: 0 auto 20px;
+      line-height: 1.4;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px 40px;
+    }
+
+    h3 {
+      font-family: var(--heading-font);
+      font-size: 20px;
+      color: var(--accent);
+      margin: 30px 0 10px;
+    }
+
+    form {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      background-color: #fafafa;
+    }
+    th, td {
+      border: 1px solid #d2d7d3;
+      vertical-align: top;
+      padding: 10px;
+    }
+    th {
+      background-color: var(--accent);
+      color: #ffffff;
+      text-align: center;
+      font-weight: 400;
+      font-family: var(--heading-font);
+      font-size: 16px;
+    }
+    .task-col {
+      width: 250px; /* Wider column for task name */
+      font-weight: bold;
+      color: var(--text-color);
+    }
+
+    .checklist-cell {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .checklist-cell label {
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+      color: var(--text-color);
+    }
+    .checklist-cell input[type="checkbox"] {
+      transform: scale(1.2);
+    }
+    .checklist-cell input[type="file"] {
+      font-size: 12px;
+    }
+    .checklist-cell textarea {
+      width: 100%;
+      min-height: 40px;
+      font-size: 13px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      padding: 4px;
+      resize: vertical;
+      color: #333;
+    }
+
+    .submit-btn {
+      display: block;
+      margin: 30px auto 0;
+      background-color: var(--accent);
+      color: #ffffff;
+      border: none;
+      padding: 14px 36px;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .submit-btn:hover {
+      background-color: #3a654d;
+    }
+
+    /* Recommendations section */
+    .recommendations {
+      margin-top: 40px;
+      background-color: #f7f9f7;
+      padding: 20px;
+      border-radius: 5px;
+    }
+    .recommendations h4 {
+      color: var(--accent);
+      font-family: var(--heading-font);
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+    .recommendations ul {
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+    .recommendations ul li {
+      margin-bottom: 6px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      background-color: var(--header-bg);
+      color: #ffffff;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      th, td {
+        font-size: 14px;
+      }
+      .task-col {
+        width: 180px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Cleaneroo Commercial</h1>
+</header>
+
+<section class="hero">
+  <h2>Standard Office Cleaning Schedule</h2>
+  <p>
+    #1 Top Rated Commercial Cleaning Service<br>
+    Reduce Your Cleaning Costs • Minimize Staff Time • Partner With Cleaners That Care
+  </p>
+</section>
+
+<div class="container">
+  <form action="#" method="POST" enctype="multipart/form-data">
+    <!-- OFFICES -->
+    <h3>Offices</h3>
+    <table>
+      <thead>
+        <tr>
+          <th class="task-col">Task</th>
+          <th>Standard Visit</th>
+          <th>Deep Cleaning</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Empty bins & replace liners</td>
+          <td>
+            <div class="checklist-cell">
+              <label><input type="checkbox" name="offices_bins_std"> Done</label>
+              <input type="file" name="offices_bins_std_photo" accept="image/*">
+              <textarea name="offices_bins_std_comment" placeholder="Comments"></textarea>
+            </div>
+          </td>
+          <td>
+            <div class="checklist-cell">
+              <label><input type="checkbox" name="offices_bins_deep"> Done</label>
+              <input type="file" name="offices_bins_deep_photo" accept="image/*">
+              <textarea name="offices_bins_deep_comment" placeholder="Comments"></textarea>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Vacuum & spot clean carpets/floors</td>
+          <td>
+            <div class="checklist-cell">
+              <label><input type="checkbox" name="offices_vac_std"> Done</label>
+              <input type="file" name="offices_vac_std_photo" accept="image/*">
+              <textarea name="offices_vac_std_comment" placeholder="Comments"></textarea>
+            </div>
+          </td>
+          <td>
+            <div class="checklist-cell">
+              <label><input type="checkbox" name="offices_vac_deep"> Done</label>
+              <input type="file" name="offices_vac_deep_photo" accept="image/*">
+              <textarea name="offices_vac_deep_comment" placeholder="Comments"></textarea>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Dust desks & chairs</td>
+          <td>
+            <div class="checklist-cell">
+              <label><input type="checkbox" name="offices_dust_std"> Done</label>
+              <input type="file" name="offices_dust_std_photo" accept="image/*">
+              <textarea name="offices_dust_std_comment" placeholder="Comments"></textarea>
+            </div>
+          </td>
+          <td>
+            <div class="checklist-cell">
+              <label><input type="checkbox" name="offices_dust_deep"> Done</label>
+              <input type="file" name="offices_dust_deep_photo" accept="image/*">
+              <textarea name="offices_dust_deep_comment" placeholder="Comments"></textarea>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Sanitize high-touch areas (door handles, switches)</td>
+          <td>
+            <div class="checklist-cell">
+              <label><input type="checkbox" name="offices_touch_std"> Done</label>
+              <input type="file" name="offices_touch_std_photo" accept="image/*">
+              <textarea name="offices_touch_std_comment" placeholder="Comments"></textarea>
+            </div>
+          </td>
+          <td>
+            <div class="checklist-cell">
+              <label><input type="checkbox" name="offices_touch_deep"> Done</label>
+              <input type="file" name="offices_touch_deep_photo" accept="image/*">
+              <textarea name="offices_touch_deep_comment" placeholder="Comments"></textarea>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Clean behind & under desks (Deep only)</td>
+          <td></td>
+          <td>
+            <div class="checklist-cell">
+              <label><input type="checkbox" name="offices_behind_deep"> Done</label>
+              <input type="file" name="offices_behind_deep_photo" accept="image/*">
+              <textarea name="offices_behind_deep_comment" placeholder="Comments"></textarea>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- KITCHEN -->
+    <h3>Kitchen</h3>
+    <table>
+      <thead>
+        <tr>
+          <th class="task-col">Task</th>
+          <th>Standard Visit</th>
+          <th>Deep Cleaning</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Wipe counters & tables</td>
+          <td>
+            <div class="checklist-cell">
+              <label><input type="checkbox" name="kitchen_wipe_std"> Done</label>
+              <input type="file" name="kitchen_wipe_std_photo" accept="image/*">
+              <textarea name="kitchen_wipe_std_comment" placeholder="Comments"></textarea>
+            </div>
+          </td>
+          <td>
+            <div class="checklist-cell">
+              <label><input type="checkbox" name="kitchen_wipe_deep"> Done</label>
+              <input type="file" name="kitchen_wipe_deep_photo" accept="image/*">
+              <textarea name="kitchen_wipe_deep_comment" placeholder="Comments"></textarea>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Clean sink & faucets</td>
+          <td>
+            <div class="checklist-cell">
+              <label><input type="checkbox" name="kitchen_sink_std"> Done</label>
+              <input type="file" name="kitchen_sink_std_photo" accept="image/*">
+              <textarea name="kitchen_sink_std_comment" placeholder="Comments"></textarea>
+            </div>
+          </td>
+          <td>
+            <div class="checklist-cell">
+              <label><input type="checkbox" name="kitchen_sink_deep"> Done</label>
+              <input type="file" name="kitchen_sink_deep_photo" accept="image/*">
+              <textarea name="kitchen_sink_deep_comment" placeholder="Comments"></textarea>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Empty bins & replace liners</td>
+          <td>
+            <div class="checklist-cell">
+              <label><input type="checkbox" name="kitchen_bins_std"> Done</label>
+              <input type="file" name="kitchen_bins_std_photo" accept="image/*">
+              <textarea name="kitchen_bins_std_comment" placeholder="Comments"></textarea>
+            </div>
+          </td>
+          <td>
+            <div class="checklist-cell">
+              <label><input type="checkbox" name="kitchen_bins_deep"> Done</label>
+              <input type="file" name="kitchen_bins_deep_photo" accept="image/*">
+              <textarea name="kitchen_bins_deep_comment" placeholder="Comments"></textarea>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Wipe fridge & microwave exterior</td>
+          <td>
+            <div class="checklist-cell">
+              <label><input type="checkbox" name="kitchen_exterior_std"> Done</label>
+              <input type="file" name="kitchen_exterior_std_photo" accept="image/*">
+              <textarea name="kitchen_exterior_std_comment" placeholder="Comments"></textarea>
+            </div>
+          </td>
+          <td>
+            <div class="checklist-cell">
+              <label><input type="checkbox" name="kitchen_exterior_deep"> Done</label>
+              <input type="file" name="kitchen_exterior_deep_photo" accept="image/*">
+              <textarea name="kitchen_exterior_deep_comment" placeholder="Comments"></textarea>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Clean inside fridge & microwave (Deep only)</td>
+          <td></td>
+          <td>
+            <div class="checklist-cell">
+              <label><input type="checkbox" name="kitchen_infridge_deep"> Done</label>
+              <input type="file" name="kitchen_infridge_deep_photo" accept="image/*">
+              <textarea name="kitchen_infridge_deep_comment" placeholder="Comments"></textarea>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- BATHROOMS -->
+    <h3>Bathrooms</h3>
+    <table>
+      <thead>
+        <tr>
+          <th class="task-col">Task</th>
+          <th>Standard Visit</th>
+          <th>Deep Cleaning</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Clean & disinfect toilets</td>
+          <td>
+            <div class="checklist-cell">
+              <label><input type="checkbox" name="bathroom_toilets_std"> Done</label>
+              <input type="file" name="bathroom_toilets_std_photo" accept="image/*">
+              <textarea name="bathroom_toilets_std_comment" placeholder="Comments"></textarea>
+            </div>
+          </td>
+          <td>
+            <div class="checklist-cell">
+              <label><input type="checkbox" name="bathroom_toilets_deep"> Done</label>
+              <input type="file" name="bathroom_toilets_deep_photo" accept="image/*">
+              <textarea name="bathroom_toilets_deep_comment" placeholder="Comments"></textarea>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Restock toilet paper, soap, towels</td>
+          <td>
+            <div class="checklist-cell">
+              <label><input type="checkbox" name="bathroom_restock_std"> Done</label>
+              <input type="file" name="bathroom_restock_std_photo" accept="image/*">
+              <textarea name="bathroom_restock_std_comment" placeholder="Comments"></textarea>
+            </div>
+          </td>
+          <td>
+            <div class="checklist-cell">
+              <label><input type="checkbox" name="bathroom_restock_deep"> Done</label>
+              <input type="file" name="bathroom_restock_deep_photo" accept="image/*">
+              <textarea name="bathroom_restock_deep_comment" placeholder="Comments"></textarea>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Clean sinks, mirrors, faucets</td>
+          <td>
+            <div class="checklist-cell">
+              <label><input type="checkbox" name="bathroom_sinks_std"> Done</label>
+              <input type="file" name="bathroom_sinks_std_photo" accept="image/*">
+              <textarea name="bathroom_sinks_std_comment" placeholder="Comments"></textarea>
+            </div>
+          </td>
+          <td>
+            <div class="checklist-cell">
+              <label><input type="checkbox" name="bathroom_sinks_deep"> Done</label>
+              <input type="file" name="bathroom_sinks_deep_photo" accept="image/*">
+              <textarea name="bathroom_sinks_deep_comment" placeholder="Comments"></textarea>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Disinfect stalls & partitions (Deep only)</td>
+          <td></td>
+          <td>
+            <div class="checklist-cell">
+              <label><input type="checkbox" name="bathroom_stalls_deep"> Done</label>
+              <input type="file" name="bathroom_stalls_deep_photo" accept="image/*">
+              <textarea name="bathroom_stalls_deep_comment" placeholder="Comments"></textarea>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button type="submit" class="submit-btn">Submit Checklist</button>
+  </form>
+
+  <!-- Recommendations Section -->
+  <div class="recommendations">
+    <h4>Top 3 Recommendations for an Effective Office Clean</h4>
+    <ul>
+      <li>Schedule regular cleaning times to avoid disruptions.</li>
+      <li>Use eco-friendly, high-quality cleaning products for best results.</li>
+      <li>Encourage employees to keep personal workspaces tidy in between cleans.</li>
+    </ul>
+    <h4>3 Things to Avoid</h4>
+    <ul>
+      <li>Skipping high-touch points like door handles or phones.</li>
+      <li>Using harsh chemicals without proper ventilation or PPE.</li>
+      <li>Overlooking hidden areas (behind cabinets, under desks) that can harbor dirt.</li>
+    </ul>
+  </div>
+</div>
+
+<footer>
+  <p>© 2024 Cleaneroo Commercial - Office Cleaning Schedule</p>
+</footer>
+
+</body>
+</html>
